@@ -34,7 +34,7 @@ defmodule Sortkeys.MixProject do
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/cedricPoncot/sortkeys"},
       maintainers: ["0x9dd"],
-      files: ~w(lib mix.exs README* LICENSE* CHANGELOG*)
+      files: ~w(lib mix.exs README*)
     ]
   end
 end
