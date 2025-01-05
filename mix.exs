@@ -31,8 +31,8 @@ defmodule Sortkeys.MixProject do
     [
       name: "sort_keys",
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/username/my_package"},
-      maintainers: ["Your Name"],
+      links: %{"GitHub" => "https://github.com/cedricPoncot/sortkeys"},
+      maintainers: ["0x9dd"],
       files: ~w(lib mix.exs README* LICENSE* CHANGELOG*)
     ]
   end
