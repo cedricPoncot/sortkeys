@@ -8,7 +8,8 @@ defmodule Sortkeys.MixProject do
       elixir: "~> 1.18-dev",
       start_permanent: Mix.env() == :prod,
       description: "Recursively sorts the keys of a map.",
-      deps: deps()
+      deps: deps(),
+      package: package()
     ]
   end
 
