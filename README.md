@@ -1,8 +1,6 @@
-# Sortkeys
+# Sort the keys of a map recursively. 
 
-**Sort the keys of a map**
 Useful to get a deterministically ordered map, as the order of keys can vary between engines.
-
 
 
 ## Installation
@@ -21,7 +19,10 @@ end
 unsorted_map = %{
                   b: 0, 
                   a: %{
-                    b: %{b: 0, a: 0}, 
+                    b: %{
+                      b: 0, 
+                      a: 0
+                    }, 
                     a: 1
                   }, 
                   c: 0
@@ -32,7 +33,10 @@ Sortkeys.sort(unsorted_map)
 %{
   a: %{
     a: 1, 
-    b: %{a: 0, b: 0}
+    b: %{
+      a: 0, 
+      b: 0
+    }
   }, 
   b: 0, 
   c: 0

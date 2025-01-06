@@ -13,7 +13,7 @@ defmodule Sortkeys do
       %{a: %{a: 1, b: %{a: 0, b: 0}}, b: 0, c: 0}
 
   """
-  @spec sort(map()) :: any()
+  @spec sort(map()) :: map()
   def sort(map) when is_map(map) do
     map
     |> Enum.map(fn {key, value} ->
