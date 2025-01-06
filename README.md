@@ -18,16 +18,16 @@ end
 
 ```elixir
 unsorted_map = %{
-                  b: 0, 
-                  a: %{
-                    b: %{
-                      b: 0, 
-                      a: 0
-                    }, 
-                    a: 1
-                  }, 
-                  c: 0
-                }
+  b: 0,
+  a: %{
+    b: %{
+      b: 0,
+      a: 0
+    },
+    a: 1
+  },
+  c: 0
+}
 
 Sortkeys.sort(unsorted_map)
 
