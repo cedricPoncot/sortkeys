@@ -1,14 +1,11 @@
 # Sortkeys
 
-**Recursively sorts the keys of a map.**
+**Sort the keys of a map**
+Useful to get a deterministically ordered map, as the order of keys can vary between engines.
 
-iex> Sortkeys.sort(%{b: 0, a: %{b: %{b: 0, a: 0}, a: 1}, c: 0})
-%{a: %{a: 1, b: %{a: 0, b: 0}}, b: 0, c: 0}
+
 
 ## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `sortkeys` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -16,6 +13,30 @@ def deps do
     {:sortkeys, "~> 0.1.0"}
   ]
 end
+```
+
+## Usage
+
+```elixir
+unsorted_map = %{
+                  b: 0, 
+                  a: %{
+                    b: %{b: 0, a: 0}, 
+                    a: 1
+                  }, 
+                  c: 0
+                }
+
+Sortkeys.sort(unsorted_map)
+
+%{
+  a: %{
+    a: 1, 
+    b: %{a: 0, b: 0}
+  }, 
+  b: 0, 
+  c: 0
+}
 ```
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
