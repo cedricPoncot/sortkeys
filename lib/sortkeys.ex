@@ -17,13 +17,16 @@ defmodule Sortkeys do
   def sort(map) when is_map(map) do
     map
     |> Enum.map(fn {key, value} ->
-      if is_map(value) do
-        {key, sort(value)}
-      else
-        {key, value}
+      case value do
+        v when is_map(v) -> {key, sort(v)}
+        v when is_list(v) -> {key, Enum.map(v, &sort_list_item/1)}
+        _ -> {key, value}
       end
     end)
     |> Enum.sort_by(fn {key, _value} -> key end)
     |> Enum.into(%{})
   end
+
+  defp sort_list_item(item) when is_map(item), do: sort(item)
+  defp sort_list_item(item), do: item
 end

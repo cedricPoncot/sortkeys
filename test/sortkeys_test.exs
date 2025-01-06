@@ -20,5 +20,20 @@ defmodule SortkeysTest do
       b: 0,
       c: 0
     }
+    assert Sortkeys.sort(data) == schema
+  end
+
+  test "bracket resilience" do
+    data = %{
+      b: 0,
+      a: [%{b: [%{b: 0, a: 0}, 1], a: 1}],
+      c: 0
+    }
+    schema = %{
+      a: [%{a: 1, b: [%{a: 0, b: 0}, 1]}],
+      b: 0,
+      c: 0
+    }
+    assert Sortkeys.sort(data) == schema
   end
 end
