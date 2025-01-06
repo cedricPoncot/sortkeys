@@ -2,7 +2,7 @@
 
 Useful to get a deterministically ordered map, as the order of keys can vary between engines.
 
-https://hexdocs.pm/sort_keys/api-reference.html
+https://hex.pm/packages/sort_keys
 
 ## Installation
 
